@@ -11,13 +11,13 @@ import java.util.*;
  */
 public class Campionato
 {
-    private ArrayList<Pilota> piloti;
+    
     
     
     
     public Campionato()
     {
-        piloti=new ArrayList<>();
+        
     }
     
     

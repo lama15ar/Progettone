@@ -28,7 +28,9 @@ public class App {
     int numeroVoci=8;
     String nome;
     String cognome;
+    String scuderia;
     int vittorie;
+    
     vociMenu=new String[numeroVoci];
     Menu menu;
     int voceScelta;
@@ -66,6 +68,8 @@ public class App {
                         nome=tastiera.readString();
                         System.out.println("cognome--> ");
                         cognome=tastiera.readString();
+                        System.out.println("scuderia");
+                        scuderia=tastiera.readString();
                         do
                         {
                             try
@@ -84,7 +88,7 @@ public class App {
                         {
                             try
                             {
-                                    System.out.println("Posizione (0..14) --> ");
+                                    System.out.println("Posizione (0..10) --> ");
                                     posizione=tastiera.readInt();
                                 break; //se input ok, esci dal ciclo
                             }
