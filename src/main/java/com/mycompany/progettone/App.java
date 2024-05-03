@@ -7,6 +7,8 @@ package com.mycompany.progettone;
 import com.mycompany.progettone.newpackage.ConsoleInput;
 import com.mycompany.progettone.newpackage.Menu;
 import com.mycompany.progettone.Pilota;
+import Eccezioni.*;
+import java.time.LocalDate;
 
 
 /**
@@ -30,7 +32,7 @@ public class App {
     String cognome;
     String scuderia;
     int vittorie;
-    
+    Campionato f1=new Campionato();
     vociMenu=new String[numeroVoci];
     Menu menu;
     int voceScelta;
@@ -100,7 +102,7 @@ public class App {
                         
                         try 
                         {
-                            s1.setLibro(new Libro(titolo,autore,numeroPagine), ripiano, posizione);
+                            f1.setPiloti(new Pilota(nome, cognome, scuderia, LocalDate.MAX));
                             System.out.println("Volume aggiunto correttamente");
                         } 
                         catch (EccezioneRipianoNonValido ex) 
