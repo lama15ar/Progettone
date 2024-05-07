@@ -6,58 +6,35 @@ package com.mycompany.progettone;
 
 import java.time.LocalDate;
 
-/**
- *
- * @author Studente
- */
-public class Pilota
-{
+public class Pilota {
+    private static long nextCodice = 1;
     private long idScuderia;
     private String nome;
     private String cognome;
     private String scuderia;
     private int vittorie;
-    private static long nextCodice=1;
     private LocalDate data;
 
-    public Pilota(String nome, String cognome, String scuderia, LocalDate data) {
-        idScuderia=nextCodice;
+    public Pilota(String nome, String cognome, String scuderia,int vittorie, LocalDate data) {
+        this.idScuderia = nextCodice++;
         this.nome = nome;
         this.cognome = cognome;
         this.scuderia = scuderia;
         this.data = data;
-        this.vittorie=vittorie;
-        nextCodice++;
     }
+
     
-    public Pilota(Pilota pilota)
-    {
-        this.nome=pilota.getNome();
-        this.cognome=pilota.getCognome();
-        this.scuderia=pilota.getScuderia();
+
+    public long getIdScuderia() {
+        return idScuderia;
     }
 
-    public int getVittorie() {
-        return vittorie;
-    }
-
-    public void setVittorie(int vittorie) {
-        this.vittorie = vittorie;
-    }
     public String getNome() {
         return nome;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public LocalDate getData() {
-        return data;
-    }
-
-    public void setData(LocalDate data) {
-        this.data = data;
     }
 
     public String getCognome() {
@@ -76,20 +53,30 @@ public class Pilota
         this.scuderia = scuderia;
     }
 
-    public int getIdscuderia() {
-        return (int) idScuderia;
+    public int getVittorie() {
+        return vittorie;
+    }
+
+    public void setVittorie(int vittorie) {
+        this.vittorie = vittorie;
+    }
+
+    public LocalDate getData() {
+        return data;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
     }
 
     @Override
     public String toString() {
-        return "Pilota{" + "idScuderia=" + idScuderia + ", nome=" + nome + ", cognome=" + cognome + ", scuderia=" + scuderia + ", vittorie=" + vittorie + ", data=" + data + '}';
+        return "Pilota{" +"idScuderia=" + idScuderia + ", nome='" + nome + '\'' + ", cognome='" + cognome + '\'' + ", scuderia='" + scuderia + '\'' + ", vittorie=" + vittorie + ", data=" + data + '}';
     }
-
+    
    
-    
-    
-
-   
-
-    
 }
+
+
+
+    

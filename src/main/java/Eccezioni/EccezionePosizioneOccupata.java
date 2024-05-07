@@ -10,5 +10,9 @@ package Eccezioni;
  */
 public class EccezionePosizioneOccupata extends Exception
 {
+
+    public EccezionePosizioneOccupata(String non_ci_sono_posizioni_disponibili_per_agg) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

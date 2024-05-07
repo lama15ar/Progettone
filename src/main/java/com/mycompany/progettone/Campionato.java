@@ -2,11 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+
 package com.mycompany.progettone;
+
 import Eccezioni.EccezionePosizioneNonValida;
 import Eccezioni.EccezionePosizioneOccupata;
 import com.mycompany.progettone.Pilota;
+import java.io.*;
+import Eccezioni.*;
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Campionato {
     private Pilota[] piloti;
@@ -16,61 +23,69 @@ public class Campionato {
         piloti = new Pilota[NUM_MAX_PILOTI];
     }
 
-    public Campionato(Campionato camp) {
-        piloti = new Pilota[NUM_MAX_PILOTI];
-        for (int i = 0; i < camp.NUM_MAX_PILOTI(); i++) {
-            piloti[i]=new Pilota(piloti[i]);
-        }
-    }
-
-    
-      public void aggiungiPilota(String nome, String cognome, String scuderia, LocalDate dataNascita)
-      {
-        int posizione = -1;
-        for (int i = 0; i <piloti.length; i++) {
-            if (piloti[i]==null) {
-                posizione=i;
-                break;
+    public void aggiungiPilota(Pilota pilota,int vittorie) throws EccezionePosizioneOccupata {
+        for (int i = 0; i < piloti.length; i++) {
+            if (piloti[i] == null) {
+                piloti[i] = pilota;
+                pilota.setVittorie(vittorie);
+                
+                return;
             }
         }
         
-     public Campionato(Pilota[] elencoPilota) throws EccezionePosizioneNonValida, EccezionePosizioneOccupata
-    {
-        piloti = new Pilota[NUM_MAX_PILOTI];
-        int numeroPilotiDaAggiungere = elencoPilota.length;
-        if (numeroPilotiDaAggiungere > NUM_MAX_PILOTI)
-            numeroPilotiDaAggiungere = NUM_MAX_PILOTI;
-        for (int i = 0; i < numeroPilotiDaAggiungere; i++) {
-            setPiloti(elencoPilota[i]);
-        }
     }
 
-    public int setPiloti(Pilota pilota) throws EccezionePosizioneNonValida, EccezionePosizioneOccupata {
-        if(NUM_MAX_PILOTI==piloti.length){
-            //eccezione
-        }
-        int nPiloti=0;
-        piloti[nPiloti]=new Pilota(pilota);
-        return Piloti;
-    }
-
-    private Pilota getPilota(int codice) {
-        for(int i=0; i<piloti.length; i++){
-            if(piloti[i].getIdscuderia()==codice){
-                return new Pilota(piloti[i]);
+    public Pilota getPilota(int id) throws EccezionePosizioneNonValida {
+        for (Pilota pilota : piloti) {
+            if (pilota != null && pilota.getIdScuderia() == id) {
+                return pilota;
             }
         }
         return null;
+        
+    }
+    public Pilota[] getPiloti() {
+        return piloti;
+    }
+    
+    public void cancellaPilota(int idScuderia) throws EccezionePosizioneNonValida {
+    for (int i = 0; i < piloti.length; i++) {
+        if (piloti[i] != null && piloti[i].getIdScuderia() == idScuderia) {
+            piloti[i]=null;
+            return;
+        }
+    }
+    
+  }
+    
+    public  Pilota[] ordinaPiloti()
+    {
+         Pilota[] pilotiOrdinati = new Pilota[piloti.length];
+    
+    
+      for (int i = 0; i < piloti.length; i++) {
+        pilotiOrdinati[i] = piloti[i];
+    }
+    for (int i = 0; i < pilotiOrdinati.length - 1; i++) {
+        for (int j = i + 1; j < pilotiOrdinati.length; j++) {
+            if (pilotiOrdinati[j] != null && pilotiOrdinati[i] != null && pilotiOrdinati[j].getVittorie() < pilotiOrdinati[i].getVittorie()) {
+                Pilota pilO = pilotiOrdinati[j];
+                pilotiOrdinati[j] = pilotiOrdinati[i];
+                pilotiOrdinati[i] = pilO;
+              }
+          }
+      }
+        return pilotiOrdinati;
+        
     }
 
-    private int NUM_MAX_PILOTI() {
-        return NUM_MAX_PILOTI;
+    
+    public void visualizzaPiloti() {
+        for (Pilota pilota : piloti) {
+            if (pilota != null) {
+                System.out.println(pilota);
+            }
+        }
     }
-    
-    
 }
 
-    
-    
-
-    

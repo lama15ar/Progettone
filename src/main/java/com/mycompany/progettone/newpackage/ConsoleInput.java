@@ -80,6 +80,8 @@ public class ConsoleInput
     {
         return Byte.parseByte(tastiera.readLine());
     }
+
+    
     
     
 }

@@ -10,5 +10,7 @@ package Eccezioni;
  */
 public class EccezionePosizioneNonValida extends Exception
 {
+
+    
     
 }
