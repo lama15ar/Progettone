@@ -4,8 +4,8 @@
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>220</x>
-      <y>190</y>
+      <x>390</x>
+      <y>110</y>
       <w>60</w>
       <h>110</h>
     </coordinates>
@@ -15,10 +15,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>340</x>
-      <y>80</y>
+      <x>510</x>
+      <y>0</y>
       <w>210</w>
-      <h>370</h>
+      <h>460</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -26,8 +26,8 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>390</x>
-      <y>100</y>
+      <x>560</x>
+      <y>20</y>
       <w>120</w>
       <h>40</h>
     </coordinates>
@@ -37,8 +37,8 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>390</x>
-      <y>160</y>
+      <x>560</x>
+      <y>80</y>
       <w>120</w>
       <h>50</h>
     </coordinates>
@@ -49,8 +49,8 @@ presenti</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>390</x>
-      <y>220</y>
+      <x>560</x>
+      <y>140</y>
       <w>120</w>
       <h>50</h>
     </coordinates>
@@ -61,8 +61,8 @@ singolo</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>380</x>
-      <y>280</y>
+      <x>550</x>
+      <y>200</y>
       <w>120</w>
       <h>40</h>
     </coordinates>
@@ -72,8 +72,8 @@ singolo</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>380</x>
-      <y>330</y>
+      <x>550</x>
+      <y>250</y>
       <w>120</w>
       <h>40</h>
     </coordinates>
@@ -83,8 +83,8 @@ singolo</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>240</x>
-      <y>110</y>
+      <x>410</x>
+      <y>30</y>
       <w>170</w>
       <h>140</h>
     </coordinates>
@@ -94,8 +94,8 @@ singolo</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>240</x>
-      <y>170</y>
+      <x>410</x>
+      <y>90</y>
       <w>170</w>
       <h>80</h>
     </coordinates>
@@ -105,8 +105,8 @@ singolo</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>240</x>
-      <y>210</y>
+      <x>410</x>
+      <y>130</y>
       <w>170</w>
       <h>50</h>
     </coordinates>
@@ -116,8 +116,8 @@ singolo</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>240</x>
-      <y>220</y>
+      <x>410</x>
+      <y>140</y>
       <w>160</w>
       <h>100</h>
     </coordinates>
@@ -127,8 +127,8 @@ singolo</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>240</x>
-      <y>220</y>
+      <x>410</x>
+      <y>140</y>
       <w>160</w>
       <h>140</h>
     </coordinates>
@@ -138,8 +138,8 @@ singolo</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>390</x>
-      <y>390</y>
+      <x>560</x>
+      <y>310</y>
       <w>120</w>
       <h>40</h>
     </coordinates>
@@ -150,12 +150,105 @@ CSV</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>240</x>
-      <y>220</y>
+      <x>410</x>
+      <y>140</y>
       <w>170</w>
       <h>210</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;150.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>550</x>
+      <y>370</y>
+      <w>130</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>carica/importa su file</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>410</x>
+      <y>140</y>
+      <w>160</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;140.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>620</y>
+      <w>580</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>Pilota
+--
+ - idScuderia: long
+  - nome: String
+  - cognome: String
+  - scuderia: String
+  - vittorie: int
+  - data: LocalDate
+--
+ + Pilota(nome: String, cognome: String, scuderia: String, vittorie: int, data: LocalDate)
+  + getIdScuderia(): long
+  + getNome(): String
+  + setNome(nome: String): void
+  + getCognome(): String
+  + setCognome(cognome: String): void
+  + getScuderia(): String
+  + setScuderia(scuderia: String): void
+  + getVittorie(): int
+  + setVittorie(vittorie: int): void
+  + getData(): LocalDate
+  + setData(data: LocalDate): void
+  + toString(): String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>780</x>
+      <y>620</y>
+      <w>320</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>Campionato
+--
+- piloti: Pilota[]
+- NUM_MAX_PILOTI: int
+
+--
++ Campionato()
+  + aggiungiPilota(pilota: Pilota, vittorie: int): void
+  + getPilota(id: int): Pilota
+  + getPiloti(): Pilota[]
+  + cancellaPilota(idScuderia: int): void
+  + ordinaPiloti(): Pilota[]
+  + visualizzaPiloti(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>610</x>
+      <y>710</y>
+      <w>190</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+-Pilota:piloti[ ]
+N_MAX_PILOTI
+                                   1
+             </panel_attributes>
+    <additional_attributes>170.0;20.0;10.0;20.0</additional_attributes>
   </element>
 </diagram>

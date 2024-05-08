@@ -4,19 +4,26 @@
  */
 package com.mycompany.progettone.newpackage;
 
-/**
- *
- * @author Studente
- */
+ /**
+     * Costruttore della classe FileException.
+     * @param motivo Il motivo dell'eccezione.
+     */
 public class FileException extends Exception
 {
     private String motivoEccezione;
     
+     /**
+     * Costruttore della classe FileException.
+     * @param motivo Il motivo dell'eccezione.
+     */
     public FileException(String motivo)
     {
 	motivoEccezione=motivo;
     }
-    
+     /**
+     * Restituisce una stringa rappresentante il motivo dell'eccezione.
+     * @return Il motivo dell'eccezione.
+     */
     public String toString()
     {
 	return motivoEccezione;

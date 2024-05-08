@@ -15,14 +15,25 @@ import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Campionato {
+/**
+ * La classe Campionato gestisce i piloti e le operazioni relative al campionato di Formula 1.
+ */
+public class Campionato implements Serializable{
     private Pilota[] piloti;
     private final static int NUM_MAX_PILOTI = 10;
-
+  /**
+     * Costruttore della classe Campionato.
+     * Inizializza l'array dei piloti con la dimensione massima prestabilita.
+     */
     public Campionato() {
         piloti = new Pilota[NUM_MAX_PILOTI];
     }
-
+ /**
+     * Aggiunge un pilota al campionato.
+     * @param pilota Il pilota da aggiungere.
+     * @param vittorie Il numero di vittorie del pilota.
+     * @throws EccezionePosizioneOccupata Se non ci sono posizioni disponibili per il pilota.
+     */
     public void aggiungiPilota(Pilota pilota,int vittorie) throws EccezionePosizioneOccupata {
         for (int i = 0; i < piloti.length; i++) {
             if (piloti[i] == null) {
@@ -34,7 +45,12 @@ public class Campionato {
         }
         
     }
-
+  /**
+     * Ottiene il pilota con l'ID specificato.
+     * @param id L'ID del pilota da cercare.
+     * @return Il pilota corrispondente all'ID, null se non trovato.
+     * @throws EccezionePosizioneNonValida Se l'ID specificato non è valido.
+     */
     public Pilota getPilota(int id) throws EccezionePosizioneNonValida {
         for (Pilota pilota : piloti) {
             if (pilota != null && pilota.getIdScuderia() == id) {
@@ -44,10 +60,18 @@ public class Campionato {
         return null;
         
     }
+    /**
+     * Ottiene l'array dei piloti.
+     * @return L'array dei piloti.
+     */
     public Pilota[] getPiloti() {
         return piloti;
     }
-    
+     /**
+     * Cancella un pilota dal campionato.
+     * @param idScuderia L'ID del pilota da cancellare.
+     * @throws EccezionePosizioneNonValida Se l'ID specificato non è valido.
+     */
     public void cancellaPilota(int idScuderia) throws EccezionePosizioneNonValida {
     for (int i = 0; i < piloti.length; i++) {
         if (piloti[i] != null && piloti[i].getIdScuderia() == idScuderia) {
@@ -57,7 +81,10 @@ public class Campionato {
     }
     
   }
-    
+    /**
+     * Ordina i piloti per numero di vittorie.
+     * @return Un array di piloti ordinati per numero di vittorie.
+     */
     public  Pilota[] ordinaPiloti()
     {
          Pilota[] pilotiOrdinati = new Pilota[piloti.length];
@@ -79,7 +106,9 @@ public class Campionato {
         
     }
 
-    
+     /**
+     * Visualizza tutti i piloti presenti nel campionato.
+     */
     public void visualizzaPiloti() {
         for (Pilota pilota : piloti) {
             if (pilota != null) {

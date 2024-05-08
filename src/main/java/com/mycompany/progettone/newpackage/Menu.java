@@ -98,7 +98,9 @@ public class Menu
         }while(!sceltaOK);
         return scelta;      
     }
-    
+     /**
+     * Visualizza il menu con le voci numerate.
+     */
     public void visualizzaMenu()
     {
         for(int i=0;i<numeroVoci;i++)

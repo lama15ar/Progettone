@@ -16,13 +16,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class App {
+public class App implements Serializable{
      
 
 
@@ -34,14 +35,16 @@ public class App {
         System.out.println(" | || (_) | |  | | | | | | |_| | | (_| |  | |");
         System.out.println(" |_| \\___/|_|  |_| |_| |_|\\__,_|_|\\__,_|  |_| ");
 
-        
+         // Variabili per l'inserimento dei dati del pilota
         String nome;
         String cognome;
         String scuderia;
         int vittorie;
         
         
-        
+        /*
+         Variabili per l'inserimento dei dati del pilota
+        */
         String[] vociMenu;
         int numeroVoci =10;
         Campionato f1 = new Campionato();
