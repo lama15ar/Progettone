@@ -31,7 +31,7 @@ public class App implements Serializable{
      * 
      * @param args gli argomenti passati alla riga di comando
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         System.out.println("  __                           _          __ ");
         System.out.println(" / _|                          | |       /_ |");
         System.out.println(" | |_ ___  _ __ _ __ ___  _   _| | __ _   | | ");
@@ -295,6 +295,22 @@ public class App implements Serializable{
                  break;
                  
                 case 10:
+                    try {
+                         System.out.println("Inserisci l'ID del pilota da modificare:");
+                        int idModifica = tastiera.readInt();
+                        System.out.println("Inserisci il nuovo nome:");
+                        String nuovoNome = tastiera.readString();
+                        System.out.println("Inserisci il nuovo cognome:");
+                        String nuovoCognome = tastiera.readString();
+                        System.out.println("Inserisci la nuova scuderia:");
+                        String nuovaScuderia = tastiera.readString();
+                        System.out.println("Inserisci il nuovo numero di vittorie:");
+                        int nuoveVittorie = tastiera.readInt();
+                        f1.modificaPilota(idModifica, nuovoNome, nuovoCognome, nuovaScuderia, nuoveVittorie);
+                        System.out.println("Pilota modificato con successo.");
+                    } catch (EccezionePosizioneNonValida ex) {
+                        System.out.println("Nessun pilota trovato con l'ID specificato.");
+                    }
                  
                 break;
 

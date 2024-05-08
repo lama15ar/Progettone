@@ -116,5 +116,36 @@ public class Campionato implements Serializable{
             }
         }
     }
+    
+    
+    /**
+ * Modifica i dettagli di un pilota nel campionato.
+ * @param idScuderia L'ID del pilota da modificare.
+ * @param nome Il nuovo nome del pilota.
+ * @param cognome Il nuovo cognome del pilota.
+ * @param scuderia La nuova scuderia del pilota.
+ * @param vittorie Il nuovo numero di vittorie del pilota.
+ * @throws EccezionePosizioneNonValida Se l'ID specificato non è valido.
+ */
+    public void modificaPilota(int idScuderia, String nome, String cognome, String scuderia, int vittorie) throws EccezionePosizioneNonValida {
+    Pilota pilotaModificato = null;
+    for (int i = 0; i < piloti.length; i++) {
+        if (piloti[i] != null && piloti[i].getIdScuderia() == idScuderia) {
+            pilotaModificato = piloti[i];
+            break;
+        }
+    }
+     if (pilotaModificato != null) {
+        pilotaModificato.setNome(nome);
+        pilotaModificato.setCognome(cognome);
+        pilotaModificato.setScuderia(scuderia);
+        pilotaModificato.setVittorie(vittorie);
+    } else {
+         System.out.println("pos non valida");
+    
+     }
+   }
 }
+  
 
+ 
