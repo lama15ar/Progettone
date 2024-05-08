@@ -26,7 +26,11 @@ import java.util.logging.Logger;
 public class App implements Serializable{
      
 
-
+      /**
+     * Metodo principale dell'applicazione.
+     * 
+     * @param args gli argomenti passati alla riga di comando
+     */
     public static void main(String[] args) {
         System.out.println("  __                           _          __ ");
         System.out.println(" / _|                          | |       /_ |");
@@ -46,7 +50,7 @@ public class App implements Serializable{
          Variabili per l'inserimento dei dati del pilota
         */
         String[] vociMenu;
-        int numeroVoci =10;
+        int numeroVoci =11;
         Campionato f1 = new Campionato();
         vociMenu = new String[numeroVoci];
         Menu menu;
@@ -84,6 +88,7 @@ public class App implements Serializable{
         vociMenu[7] = "\t--> Importa i volumi da file CSV";
         vociMenu[8] = "\t--> salva dati Campionatio";
         vociMenu[9] = "\t--> carica dati Campionato";
+        vociMenu[10] = "\t--> modifica pilota";
 
         menu = new Menu(vociMenu);
 
@@ -288,6 +293,10 @@ public class App implements Serializable{
                         System.out.println("impossbile legger il dato memorizzato ");
                     }
                  break;
+                 
+                case 10:
+                 
+                break;
 
 
                 default:
