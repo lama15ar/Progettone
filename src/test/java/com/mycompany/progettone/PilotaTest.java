@@ -4,6 +4,7 @@
  */
 package com.mycompany.progettone;
 
+import java.time.LocalDate;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Studente
  */
 public class PilotaTest {
+     Pilota pilota = new Pilota("Lello", "pasa", "rar", 1800, LocalDate.of(1, 1, 7));
     
     public PilotaTest() {
     }
@@ -21,6 +23,7 @@ public class PilotaTest {
      */
     @Test
     public void testGetIdScuderia() {
+        System.out.println("ID Scuderia: " + pilota.getIdScuderia());
     }
 
     /**
@@ -28,6 +31,9 @@ public class PilotaTest {
      */
     @Test
     public void testGetNome() {
+        System.out.println("Nome prima : " + pilota.getNome());
+        pilota.setNome("Massimo");
+        System.out.println("Nome dopo la modifica: " + pilota.getNome());
     }
 
     /**
@@ -35,6 +41,9 @@ public class PilotaTest {
      */
     @Test
     public void testSetNome() {
+        System.out.println("Nome prima : " + pilota.getNome());
+        pilota.setNome("Massimo");
+        System.out.println("Nome dopo la modifica: " + pilota.getNome());
     }
 
     /**
@@ -42,6 +51,10 @@ public class PilotaTest {
      */
     @Test
     public void testGetCognome() {
+        System.out.println("Cognome prima: " + pilota.getCognome());
+        pilota.setCognome("sorteni");
+        System.out.println("Cognome dopo la modifica: " + pilota.getCognome());
+
     }
 
     /**
@@ -49,6 +62,10 @@ public class PilotaTest {
      */
     @Test
     public void testSetCognome() {
+        System.out.println("Cognome prima: " + pilota.getCognome());
+        pilota.setCognome("sorteni");
+        System.out.println("Cognome dopo la modifica: " + pilota.getCognome());
+
     }
 
     /**
@@ -56,6 +73,9 @@ public class PilotaTest {
      */
     @Test
     public void testGetScuderia() {
+        System.out.println("Scuderia prima : " + pilota.getScuderia());
+        pilota.setScuderia("ferrari");
+        System.out.println("Scuderia dopo la modifica: " + pilota.getScuderia());
     }
 
     /**
@@ -63,6 +83,9 @@ public class PilotaTest {
      */
     @Test
     public void testSetScuderia() {
+        System.out.println("Scuderia prima: " + pilota.getScuderia());
+        pilota.setScuderia("ferrari");
+        System.out.println("Scuderia dopo la modifica: " + pilota.getScuderia());
     }
 
     /**
@@ -70,6 +93,9 @@ public class PilotaTest {
      */
     @Test
     public void testGetVittorie() {
+        System.out.println("Vittorie prima : " + pilota.getVittorie());
+        pilota.setVittorie(110);
+        System.out.println("Vittorie dopo la modifica: " + pilota.getVittorie());
     }
 
     /**
@@ -77,6 +103,9 @@ public class PilotaTest {
      */
     @Test
     public void testSetVittorie() {
+        System.out.println("Vittorie prima : " + pilota.getVittorie());
+        pilota.setVittorie(110);
+        System.out.println("Vittorie dopo la modifica: " + pilota.getVittorie());
     }
 
     /**
@@ -84,6 +113,9 @@ public class PilotaTest {
      */
     @Test
     public void testGetData() {
+        System.out.println("Data di nascita prima : " + pilota.getData());
+        pilota.setData(LocalDate.of(2005, 9, 30));
+        System.out.println("Data di nascita dopo la modifica: " + pilota.getData());
     }
 
     /**
@@ -91,6 +123,9 @@ public class PilotaTest {
      */
     @Test
     public void testSetData() {
+        System.out.println("Data di nascita prima della modifica: " + pilota.getData());
+        pilota.setData(LocalDate.of(1997, 9, 30));
+        System.out.println("Data di nascita dopo la modifica: " + pilota.getData());
     }
 
     /**
@@ -98,6 +133,7 @@ public class PilotaTest {
      */
     @Test
     public void testToString() {
+          System.out.println("Rappresentazione del pilota: " + pilota.toString());
     }
     
 }
